@@ -1,0 +1,69 @@
+%% --Packages--
+
+\usepackage{graphicx}
+%\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{xcolor}
+%\usepackage[italian]{babel}
+\usepackage{fancyhdr}
+
+%\deftranslation[to=italian]{Example}{Esempio} %for example translation to "esempio" if needed
+
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Some settings...
+
+%gets rid of bottom navigation bars and page numbers
+%\setbeamertemplate{footline}{}
+
+%gets rid of navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%setting arev font
+\usepackage{arev}
+
+%setting geometry of blocks and shadow
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%RGB defining color if you want manual control of color, just like RedEurac ;)
+\definecolor{RedEurac}{RGB}{208,77,42} 
+
+%general colors and scheme, fg=font color and bg=background color
+%just don´t put bg={} if you don´t want a background
+
+\setbeamercolor{structure}{fg=RedEurac,bg=White} % color of structure (itemize, enumerate...)
+\setbeamercolor{section in toc}{fg=RedEurac,bg=White} % table of contents color 
+\setbeamercolor{block title example}{fg=RedEurac,bg=RedEurac} %title example color
+\setbeamercolor{block body example}{fg=RedEurac,bg=White} %body example color
+\setbeamercolor{block title itemize}{fg=RedEurac,bg=White} %title itemize color
+\setbeamercolor{block body itemize}{fg=RedEurac,bg=White} %body itemize color 
+\setbeamercolor{itemize item}{fg=RedEurac,bg=white} %item colour and enumerate color
+\setbeamercolor{page number in head/foot}{fg=RedEurac} %page number color
+\setbeamercolor{caption name}{fg=RedEurac} %caption name color
+
+%override color of some specific element
+\setbeamercolor{frametitle}{fg=RedEurac,bg=White!20,} %frametitle color and background color
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamercolor{author}{fg=RedEurac,bg={}} %author color and background color
+\setbeamercolor{date}{fg=White,bg={}} %date color and background color
+\setbeamercolor{title}{fg=RedEurac,bg={}} %title color and background color
+\setbeamercolor{subtitle}{fg=RedEurac,bg={}} %subtitle color and background color
+\setbeamercolor{footline}{fg=RedEurac,bg={}}
+\setbeamerfont{footline}{series=\small}
+\setbeamercolor{footnote}{fg=RedEurac}
+
+\renewcommand*\footnoterule{}
+
+\setbeamertemplate{footnote}{
+        \hspace*{3cm}%
+        \insertfootnotemark
+        \parbox[b][0.5cm]{7.5cm}{
+            \insertfootnotetext%
+        }%
+}

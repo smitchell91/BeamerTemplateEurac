@@ -1,0 +1,155 @@
+\documentclass[xcolor=dvipsnames,aspectratio=169]{beamer}
+
+\input{documentsettings.tex}
+
+% Author info
+
+\date{\today} %no date, just put one yourself if you want
+
+\newcommand{\email}[1]{\href{mailto:msecchi@eurac.edu}{\emph{msecchi@eurac.edu}}}
+\newcommand{\authorname}[1]{Mattia Secchi}
+\newcommand{\institutename}[1]{Institute for Renewable Energy}
+\newcommand{\affiliation}[1]{University of Trento}
+\newcommand{\titledoc}[1]{100\% RES in the European grid:}
+\newcommand{\subtitledoc}[1]{\emph{a new role for the consumers}}
+
+%inserting global background, just substitute the image in the folder if you want to change it
+\usebackgroundtemplate%
+{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{Background/middle.pdf}%
+}
+
+%inserting logo in every page after title, just substitute the images in Logo folder if you want
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=south west] at (current page.south west) {\includegraphics[height=0.4cm]{Logo/logo.png}};
+\end{tikzpicture}}
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east] at (current page.north east) {\includegraphics[height=2cm]{Logo/unitn.png}};
+\end{tikzpicture}}
+
+% Note: for adding a voice to summary you have to define sections with \section{•}
+
+\begin{document}
+
+\color{RedEurac} %setting global color of main text, you can set in here also a personalized color like RedEurac
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%title slide
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Background/front.pdf}}
+
+\begin{frame}[noframenumbering]
+
+\vspace{120pt}
+
+\Large \textbf{\titledoc} \\
+\normalsize \subtitledoc \\ \\
+\vspace{24pt}
+\authorname \\ \\
+\small \affiliation
+
+\end{frame}
+}
+
+{
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+    \vspace{2pt}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%summary slide
+
+\begin{frame}[t] %top for put text always in the top of the slide
+\frametitle{Summary}
+\tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add frames here, use section to add a title in summary
+
+\begin{section}{Nice section}
+\begin{frame}[t]
+\frametitle{Nice slide}
+Do you want some itemize? Lets do it!
+\begin{itemize}
+\item Item number 1, where I want to cite something \footnote{Reference}
+%textcolor allows you to force a color in text, it is useful to set colours on itemize content
+\item  \textcolor{yellow}{Item number 2}
+\item \textcolor{green}{Item number 3}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Nice slide with a quote}
+Giving you a quote from me:
+\begin{quote}
+\textcolor{RedEurac}{Two things are infinite: the universe and human stupidity; and I'm not sure about the universe} %setted a personalized colour here for the quote
+\end{quote} 
+\end{frame}
+\end{section}
+
+\begin{section}{Another nice section!}
+\begin{frame}[t]
+\frametitle{Slide with an example}
+\begin{example}
+Hi, I am a good example, do you agree?
+\end{example}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Slide with an image} 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.22]{Immagini/duck.jpg}
+\end{figure}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Enumerate slide} 
+Some numbers in here
+\begin{enumerate}
+\item \textcolor{white}{Enum 1}
+\item  \textcolor{white}{Enum 2}
+\item  \textcolor{white}{Enum 3}
+\end{enumerate} 
+\end{frame}
+\end{section}
+
+\begin{frame}[t]
+\frametitle{Hyperlink slide} 
+Hi, if you click \textbf{\href{https://www.google.com}{HERE}} you go on Google page 
+\end{frame}
+
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Closure slide
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Background/end.pdf}}
+
+\begin{frame}[noframenumbering]
+
+\vspace{72pt}
+\huge
+\textbf{Thank you \\
+for your attention!} \\
+\vspace{24pt}
+\Large \textbf{\authorname} \\
+\institutename \\ \\
+\vspace{12pt}
+\normalsize \email
+
+\end{frame}
+}
+
+\end{document}
