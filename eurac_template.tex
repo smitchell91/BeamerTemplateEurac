@@ -37,11 +37,6 @@
 \node[anchor=south west] at (current page.south west) {\includegraphics[height=0.4cm]{Logo/logo.png}};
 \end{tikzpicture}}
 
-\addtobeamertemplate{frametitle}{}{%
-\begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north east] at (current page.north east) {\includegraphics[height=2cm]{Logo/unitn.png}};
-\end{tikzpicture}}
-
 % Note: for adding a voice to summary you have to define sections with \section{•}
 
 \begin{document}
@@ -80,12 +75,29 @@
 \setbeamercovered{transparent} % to have the text on the sequential slides transparent
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%summary slide
+% summary slide
+
+{
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=east] at (current page.east) {\includegraphics[height=4.5cm]{Logo/EEEIC_logo.jpg}};
+\end{tikzpicture}}
 
 \begin{frame}[t] %top for put text always in the top of the slide
 \frametitle{Summary}
+\vspace{-24pt}
 \tableofcontents
 \end{frame}
+
+}
+
+%inserting logos in every page after SUMMARY, just substitute the images in Logo folder if you want
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east] at (current page.north east) {\includegraphics[height=2cm]{Logo/unitn.png}};
+\end{tikzpicture}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Add frames here, use section to add a title in summary
