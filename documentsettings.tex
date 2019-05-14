@@ -29,8 +29,6 @@
 %setting geometry of blocks and shadow
 \setbeamertemplate{blocks}[rounded][shadow=true]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %RGB defining color if you want manual control of color, just like RedEurac ;)
 \definecolor{RedEurac}{RGB}{208,77,42} 
 
@@ -58,8 +56,10 @@
 \setbeamerfont{footline}{series=\small}
 \setbeamercolor{footnote}{fg=RedEurac}
 
+%gets rid of the rule in the footnotes
 \renewcommand*\footnoterule{}
 
+%positions the footnote for references inside the grey box at the bottom of the page
 \setbeamertemplate{footnote}{
         \hspace*{3cm}%
         \insertfootnotemark

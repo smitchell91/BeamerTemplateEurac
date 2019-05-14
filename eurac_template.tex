@@ -1,9 +1,17 @@
-%\documentclass[xcolor=dvipsnames,aspectratio=169]{beamer}
+\documentclass[xcolor=dvipsnames,aspectratio=169]{beamer}
 
-\documentclass[handout,xcolor=dvipsnames,aspectratio=169]{beamer}
-% Use this mode to create an handout version of the presentation to distribute to the audience
+% CREATED BY: Jago Cocco, Adapted by: Mattia Secchi
+
+%\documentclass[handout,xcolor=dvipsnames,aspectratio=169]{beamer}
+% Use this mode to create an handout version of the presentation to distribute to the audience:
+% every "frame" will be 1 slide only, so the <onslide> commands will not influence the number of
+% pages printed
 
 \input{documentsettings.tex}
+
+\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+% Activate this option if you want to insert more than one slide in each page. Landscape
+% is required only for 4 and 16 slides per page
 
 % Author info
 
