@@ -1,4 +1,7 @@
-\documentclass[xcolor=dvipsnames,aspectratio=169]{beamer}
+%\documentclass[xcolor=dvipsnames,aspectratio=169]{beamer}
+
+\documentclass[handout,xcolor=dvipsnames,aspectratio=169]{beamer}
+% Use this mode to create an handout version of the presentation to distribute to the audience
 
 \input{documentsettings.tex}
 
@@ -7,7 +10,7 @@
 \date{\today} %no date, just put one yourself if you want
 
 \newcommand{\email}[1]{\href{mailto:msecchi@eurac.edu}{\emph{msecchi@eurac.edu}}}
-\newcommand{\authorname}[1]{Mattia Secchi}
+\newcommand{\authorname}[1]{Mattia Secchi - PhD Student}
 \newcommand{\institutename}[1]{Institute for Renewable Energy}
 \newcommand{\affiliation}[1]{University of Trento}
 \newcommand{\titledoc}[1]{100\% RES in the European grid:}
@@ -66,6 +69,8 @@
     \vspace{2pt}
 }
 
+\setbeamercovered{transparent} % to have the text on the sequential slides transparent
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %summary slide
 
@@ -82,10 +87,10 @@
 \frametitle{Nice slide}
 Do you want some itemize? Lets do it!
 \begin{itemize}
-\item Item number 1, where I want to cite something \footnote{Reference}
+\onslide<1->{\item Item number 1, where I want to cite something \footnote{Reference}}
 %textcolor allows you to force a color in text, it is useful to set colours on itemize content
-\item  \textcolor{yellow}{Item number 2}
-\item \textcolor{green}{Item number 3}
+\onslide<2->{\item Item number 2}
+\onslide<3->{\item Item number 3}
 \end{itemize}
 \end{frame}
 
@@ -115,14 +120,16 @@ Hi, I am a good example, do you agree?
 \end{frame}
 
 \begin{frame}[t]
-\frametitle{Enumerate slide} 
-Some numbers in here
-\begin{enumerate}
-\item \textcolor{white}{Enum 1}
-\item  \textcolor{white}{Enum 2}
-\item  \textcolor{white}{Enum 3}
-\end{enumerate} 
+\frametitle{Itemize with transparency}
+Do you want some itemize? Lets do it!
+\begin{itemize}
+\onslide<1->{\item Item number 1, where I want to cite something \footnote{Reference}}
+%textcolor allows you to force a color in text, it is useful to set colours on itemize content
+\onslide<2->{\item Item number 2}
+\onslide<3->{\item Item number 3}
+\end{itemize}
 \end{frame}
+
 \end{section}
 
 \begin{frame}[t]
@@ -130,7 +137,60 @@ Some numbers in here
 Hi, if you click \textbf{\href{https://www.google.com}{HERE}} you go on Google page 
 \end{frame}
 
+\begin{frame}
+\frametitle{Slide with 2 columns, one with a picture}
+
+\begin{columns}
+
+\begin{column}{0.4\textwidth}
+\includegraphics[width=\columnwidth]{Immagini/duck.jpg}
+\end{column}
+
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+\item Mane
+\item Tekel
+\item Fares
+\end{itemize}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% slide with some code
+
+\begin{frame}[fragile]
+\frametitle{Un algoritmo per trovare numeri primi}
+\begin{verbatim}
+int main (void)
+{
+std::vector<bool> is_prime (100, true);
+for (int i = 2; i < 100; i++)
+if (is_prime[i])
+{
+std::cout << i << " ";
+for (int j = i; j < 100; is_prime [j] = false, j+=i);
 }
+return 0;
+}
+\end{verbatim}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bibliography (if needed)
+
+\begin{frame}
+\frametitle{\refname}
+\begin{thebibliography}{9}
+\bibitem{goldbach:congettura} Christian Goldbach
+\newblock Un problema aperto
+\newblock \emph{Lettera a Leonhard Euler}, 1742
+\end{thebibliography}
+\end{frame}
+
+} % this ends the numeration
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Closure slide
 
