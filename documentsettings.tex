@@ -9,6 +9,7 @@
 \usepackage{xcolor}
 %\usepackage[italian]{babel}
 \usepackage{fancyhdr}
+\usepackage{pgfpages}
 
 %\deftranslation[to=italian]{Example}{Esempio} %for example translation to "esempio" if needed
 
@@ -29,6 +30,11 @@
 %setting geometry of blocks and shadow
 \setbeamertemplate{blocks}[rounded][shadow=true]
 
+%enumerate the elements in ToC
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3.2em\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\inserttocsubsection\par}
+
 %RGB defining color if you want manual control of color, just like RedEurac ;)
 \definecolor{RedEurac}{RGB}{208,77,42} 
 
@@ -36,7 +42,8 @@
 %just don´t put bg={} if you don´t want a background
 
 \setbeamercolor{structure}{fg=RedEurac,bg=White} % color of structure (itemize, enumerate...)
-\setbeamercolor{section in toc}{fg=RedEurac,bg=White} % table of contents color 
+\setbeamercolor{section in toc}{fg=RedEurac,bg=White} % table of contents color
+\setbeamercolor{subsection in toc}{fg=RedEurac,bg=White} % table of contents color
 \setbeamercolor{block title example}{fg=RedEurac,bg=RedEurac} %title example color
 \setbeamercolor{block body example}{fg=RedEurac,bg=White} %body example color
 \setbeamercolor{block title itemize}{fg=RedEurac,bg=White} %title itemize color
@@ -53,8 +60,9 @@
 \setbeamercolor{title}{fg=RedEurac,bg={}} %title color and background color
 \setbeamercolor{subtitle}{fg=RedEurac,bg={}} %subtitle color and background color
 \setbeamercolor{footline}{fg=RedEurac,bg={}}
-\setbeamerfont{footline}{series=\small}
+\setbeamerfont{footline}{size=\small}
 \setbeamercolor{footnote}{fg=RedEurac}
+\setbeamerfont{section in toc}{series=\bf}
 
 %gets rid of the rule in the footnotes
 \renewcommand*\footnoterule{}
