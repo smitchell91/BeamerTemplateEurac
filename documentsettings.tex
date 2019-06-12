@@ -1,77 +1,99 @@
 %% --Packages--
 
 \usepackage{graphicx}
-%\usepackage{amsmath}
+\usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{geometry}
 \usepackage{tikz}
 \usepackage{xcolor}
-%\usepackage[italian]{babel}
 \usepackage{fancyhdr}
 \usepackage{pgfpages}
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{eurosym}
+\usepackage{empheq}
+\usepackage{ragged2e}
 
-%\deftranslation[to=italian]{Example}{Esempio} %for example translation to "esempio" if needed
+% Language settings
+%\usepackage[italian]{babel}
+%\deftranslation[to=italian]{Example}{Esempio}
 
+% Defining the mode for the .cls file, just leave "presentation" for the standard presentation
 \mode<presentation>
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Some settings...
-
-%gets rid of bottom navigation bars and page numbers
-%\setbeamertemplate{footline}{}
-
-%gets rid of navigation symbols
+% Gets rid of navigation symbols
 \setbeamertemplate{navigation symbols}{}
 
-%setting arev font
+% Setting arev font
 \usepackage{arev}
 
-%setting geometry of blocks and shadow
+% Setting geometry of blocks and shadow
 \setbeamertemplate{blocks}[rounded][shadow=true]
 
-%enumerate the elements in ToC
+% Enumerate the elements in ToC
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}[subsections numbered]
 \setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3.2em\rlap{\hskip-2em\inserttocsectionnumber.\inserttocsubsectionnumber}\inserttocsubsection\par}
 
-%RGB defining color if you want manual control of color, just like RedEurac ;)
-\definecolor{RedEurac}{RGB}{208,77,42} 
+% RGB defining color if you want manual control of color, for ex. RedEurac ;)
+\definecolor{RedEurac}{RGB}{208,77,42}
+\definecolor{LightGray}{RGB}{233,233,233}
 
-%general colors and scheme, fg=font color and bg=background color
-%just don´t put bg={} if you don´t want a background
+% General colors and scheme, fg=font color and bg=background color
+% Note: don´t put bg={} if you don´t want a background
+\setbeamercolor{date}{fg=Black,bg={}} %date color and background color
 
-\setbeamercolor{structure}{fg=RedEurac,bg=White} % color of structure (itemize, enumerate...)
+% Things which should appear in BLACK
+\setbeamercolor{structure}{fg=Black,bg=White} % color of structure (itemize, enumerate...)
+\setbeamercolor{block title}{fg=White,bg=RedEurac} %title example color
+\setbeamercolor{block body}{fg=Black,bg=LightGray} %body example color
+\setbeamercolor{itemize item}{fg=Black,bg=white} %item colour and enumerate color
+\setbeamercolor{caption name}{fg=Black} %caption name color
+\setbeamercolor{math text}{fg=black}
+\setbeamercolor{footnote}{fg=Black}
+
+% Things which should appear in RED EURAC
 \setbeamercolor{section in toc}{fg=RedEurac,bg=White} % table of contents color
 \setbeamercolor{subsection in toc}{fg=RedEurac,bg=White} % table of contents color
-\setbeamercolor{block title example}{fg=RedEurac,bg=RedEurac} %title example color
-\setbeamercolor{block body example}{fg=RedEurac,bg=White} %body example color
-\setbeamercolor{block title itemize}{fg=RedEurac,bg=White} %title itemize color
-\setbeamercolor{block body itemize}{fg=RedEurac,bg=White} %body itemize color 
-\setbeamercolor{itemize item}{fg=RedEurac,bg=white} %item colour and enumerate color
-\setbeamercolor{page number in head/foot}{fg=RedEurac} %page number color
-\setbeamercolor{caption name}{fg=RedEurac} %caption name color
-
-%override color of some specific element
+\setbeamercolor{frame number}{fg=RedEurac} %page number color
 \setbeamercolor{frametitle}{fg=RedEurac,bg=White!20,} %frametitle color and background color
-\setbeamerfont{frametitle}{series=\bfseries}
-\setbeamercolor{author}{fg=RedEurac,bg={}} %author color and background color
-\setbeamercolor{date}{fg=White,bg={}} %date color and background color
 \setbeamercolor{title}{fg=RedEurac,bg={}} %title color and background color
 \setbeamercolor{subtitle}{fg=RedEurac,bg={}} %subtitle color and background color
-\setbeamercolor{footline}{fg=RedEurac,bg={}}
-\setbeamerfont{footline}{size=\small}
-\setbeamercolor{footnote}{fg=RedEurac}
-\setbeamerfont{section in toc}{series=\bf}
 
-%gets rid of the rule in the footnotes
+% Fonts editing
+\setbeamerfont{section in toc}{series=\bf}
+\setbeamerfont{footline}{size=\small}
+\setbeamerfont{frametitle}{series=\bfseries}
+
+% captions
+\captionsetup{font=scriptsize,labelfont=scriptsize}
+
+% gets rid of the rule in the footnotes
 \renewcommand*\footnoterule{}
 
-%positions the footnote for references inside the grey box at the bottom of the page
+% positions the footnote for references inside the grey box at the bottom of the page
 \setbeamertemplate{footnote}{
-        \hspace*{3cm}%
+        \hspace*{4.5cm}%
         \insertfootnotemark
-        \parbox[b][0.5cm]{7.5cm}{
+%        \parbox[b][0.5cm]{7.5cm}{
             \insertfootnotetext%
-        }%
+%        }%
 }
+
+% slide margins
+\setbeamersize{text margin left=0.5cm,text margin right=0cm}
+
+% ragged itemize
+\newenvironment{ritemize}{\begin{itemize}\raggedright}{\end{itemize}}
+\newenvironment{litemize}{\begin{itemize}\raggedleft}{\end{itemize}}
+
+% ragged enumerate
+\newenvironment{renum}{\begin{enumerate}\raggedright}{\end{enumerate}}
+\newenvironment{lenum}{\begin{enumerate}\raggedleft}{\end{enumerate}}
+
+% Adjust spacing of the table of contents
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vfill}{\vskip\topsep}{}
+\makeatother
