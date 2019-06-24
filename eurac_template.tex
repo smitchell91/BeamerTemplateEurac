@@ -18,15 +18,15 @@
 
 % Author info
 \newcommand{\authorsname}[1]{\textcolor{RedEurac}{
-\underline{Mattia Secchi} \textsuperscript{1,2},
-Grazia Barchi \textsuperscript{2}}}
+\underline{1st Author} \textsuperscript{1,2},
+2nd Author \textsuperscript{2}}}
 
 \newcommand{\affiliationsname}[1]{\textcolor{RedEurac}{
-\textsuperscript{1} University of Trento, Department of Industrial Engineering \\
-\textsuperscript{2} Eurac Research, Institute for Renewable Energies}
+\textsuperscript{1} 1st Affiliation \\
+\textsuperscript{2} 2nd Affiliation}
 }
 
-\newcommand{\email}[1]{\textcolor{RedEurac}{\href{mailto:msecchi@eurac.edu}{\emph{msecchi@eurac.edu}}}}
+\newcommand{\email}[1]{\textcolor{RedEurac}{\href{mailto:username@eurac.edu}{\emph{username@eurac.edu}}}}
 \newcommand{\titledoc}[1]{\textcolor{RedEurac}{Peer-to-peer electricity sharing:}}
 \newcommand{\subtitledoc}[1]{\textcolor{RedEurac}{\emph{maximising PV self-consumption through BESS \\ control strategies}}}
 
@@ -39,7 +39,7 @@ Grazia Barchi \textsuperscript{2}}}
 % Inserting logos in every page after title
 \addtobeamertemplate{frametitle}{}{%
 \begin{tikzpicture}[remember picture,overlay]
-\node[anchor=south west] at (current page.south west) {\includegraphics[height=0.4cm]{Logo/logo.png}};
+\node[anchor=south west] at (current page.south west) {\frame{\includegraphics[height=0.4cm]{Logo/logo.png}}};
 \end{tikzpicture}}
 
 % Note: to add an entry to summary you have to define sections with \section{•}
@@ -54,7 +54,7 @@ Grazia Barchi \textsuperscript{2}}}
 % TITLE SLIDE
 
 {
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Background/front.pdf}}
+\usebackgroundtemplate{\frame{\includegraphics[width=\paperwidth]{Background/front.pdf}}
 
 \begin{frame}[noframenumbering]
 
@@ -83,7 +83,7 @@ Grazia Barchi \textsuperscript{2}}}
 % \end{minipage}
 % \begin{minipage}{0.4\paperwidth}
 % \vspace{-12pt}
-% \centerline{\includegraphics[height=5.5cm]{Logo/EEEIC_logo.jpg}}
+% \centerline{\frame{\includegraphics[height=5.5cm]{Logo/EEEIC_logo.jpg}}
 % \end{minipage}
     
 % \end{frame}
@@ -91,7 +91,7 @@ Grazia Barchi \textsuperscript{2}}}
 %inserting logos in every page after SUMMARY
 \addtobeamertemplate{frametitle}{}{%
 \begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north east] at (current page.north east) {\includegraphics[height=1.5cm]{Logo/unitn.png}};
+\node[anchor=north east] at (current page.north east) {\frame{\includegraphics[height=1.5cm]{Logo/unitn.png}}};
 \end{tikzpicture}
 }
 
@@ -148,7 +148,7 @@ Grazia Barchi \textsuperscript{2}}}
 
 \begin{frame}[t]
 
-\frametitle{Itemize+Minipage Horizontal}
+\frametitle{Itemize+Horizontal Minipage}
 
 \begin{minipage}{0.45\textwidth}
 
@@ -167,9 +167,9 @@ Peer-to-peer is a new concept allowing each user to:
 \begin{minipage}{0.45\textwidth}
 
 \begin{overprint}
-    \onslide<1>{\includegraphics<1>[width=\textwidth]{Immagini/P2P1.png}}
-    \onslide<2>{\includegraphics<2>[width=\textwidth]{Immagini/P2P3.png}}
-    \onslide<3>{\includegraphics<3>[width=\textwidth]{Immagini/P2P2.png}}
+    \onslide<1>{\frame{\includegraphics<1>[width=\textwidth]{Immagini/P2P1.png}}}
+    \onslide<2>{\frame{\includegraphics<2>[width=\textwidth]{Immagini/P2P3.png}}}
+    \onslide<3>{\frame{\includegraphics<3>[width=\textwidth]{Immagini/P2P2.png}}}
 \end{overprint}
 
 \end{minipage}
@@ -181,7 +181,7 @@ Peer-to-peer is a new concept allowing each user to:
 \vspace{-20pt}
 
 \frametitle{Full page picture}
-\includegraphics[width=0.85\paperwidth]{Immagini/Grid2mod.png}
+\frame{\includegraphics[width=0.85\paperwidth]{Immagini/Grid2mod.png}}
 
 \end{frame}
 
@@ -194,9 +194,9 @@ Peer-to-peer is a new concept allowing each user to:
 \vspace{-24pt}
 
 \begin{overprint}
-  \onslide<1>\centerline{\includegraphics[width=\textwidth]{Immagini/SplitGeneral.jpg}}%
-  \onslide<2>\centerline{\includegraphics[width=\textwidth]{Immagini/SplitDOD.jpg}}%
-  \onslide<3>\centerline{\includegraphics[width=\textwidth]{Immagini/SplitSOC.jpg}}%
+  \onslide<1>\centerline{\frame{\includegraphics[width=\textwidth]{Immagini/Remaining.png}}}%
+  \onslide<2>\centerline{\frame{\includegraphics[width=\textwidth]{Immagini/Remaining.png}}}%
+  \onslide<3>\centerline{\frame{\includegraphics[width=\textwidth]{Immagini/Remaining.png}}}%
 \end{overprint}
 
 \end{minipage}
@@ -251,7 +251,7 @@ $P_{fromBESS,j}(t) = P_{\Delta}(t) \cdot \frac{SOC_j(t-\Delta t)}{\sum_{j=1}^N S
 
     \vspace{-12pt}
     \setbeamercovered{}
-    \onslide<1-2>{\includegraphics<1-2>[width=0.8\textwidth]{Immagini/tariffs.pdf}
+    \onslide<1-2>{\frame{\includegraphics<1-2>[width=0.8\textwidth]{Immagini/tariffs.png}}
         \footnotesize{\textcolor{white}{Eurostat:} \\
         Eurostat:
         \url{https://ec.europa.eu/eurostat/cache/energy/prices/enprices.html?}
@@ -259,7 +259,7 @@ $P_{fromBESS,j}(t) = P_{\Delta}(t) \cdot \frac{SOC_j(t-\Delta t)}{\sum_{j=1}^N S
     }
     \vspace{-40pt}
     \setbeamercovered{transparent}
-    \onslide<3>{\vfill \vspace{-24pt} \includegraphics<3>[height=0.85\paperheight]{Immagini/irrtemp.png} \vfill}
+    \onslide<3>{\vfill \vspace{-24pt} \frame{\includegraphics<3>[height=0.85\paperheight]{Immagini/irrtemp.png}} \vfill}
     \vspace{40pt}
     \setbeamercovered{}
     \onslide<4>{\vfill \vspace{10pt} \footnotesize{
@@ -309,7 +309,7 @@ $P_{fromBESS,j}(t) = P_{\Delta}(t) \cdot \frac{SOC_j(t-\Delta t)}{\sum_{j=1}^N S
 
 \vspace{-20pt}
 \begin{minipage}[t]{0.8\paperwidth}
-\includegraphics[height=0.55\paperheight]{Immagini/SCchoice1111.pdf}
+\frame{\includegraphics[height=0.55\paperheight]{Immagini/SCchoice1111.png}}
 \end{minipage}
 \begin{minipage}[b]{0.8\paperwidth}
 \vspace{8pt}
@@ -330,7 +330,7 @@ $P_{fromBESS,j}(t) = P_{\Delta}(t) \cdot \frac{SOC_j(t-\Delta t)}{\sum_{j=1}^N S
 % CLOSURE SLIDE
 
 { % select a background for the closure slide
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Background/end.pdf}}
+\usebackgroundtemplate{\frame{\includegraphics[width=\paperwidth]{Background/end.pdf}}
 
 \begin{frame}[noframenumbering]
 
@@ -445,7 +445,7 @@ for your attention!}} \\
 \end{minipage}
 \begin{minipage}{0.5\paperwidth}
 
-\includegraphics[width=0.5\paperwidth]{Immagini/scheme.png}
+\frame{\includegraphics[width=0.5\paperwidth]{Immagini/scheme.png}}
 
 \end{minipage}
 
