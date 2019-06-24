@@ -39,7 +39,7 @@
 % Inserting logos in every page after title
 \addtobeamertemplate{frametitle}{}{%
 \begin{tikzpicture}[remember picture,overlay]
-\node[anchor=south west] at (current page.south west) {\frame{\includegraphics[height=0.4cm]{Logo/logo.png}}};
+\node[anchor=south west] at (current page.south west) {\includegraphics[height=0.4cm]{Logo/logo.png}};
 \end{tikzpicture}}
 
 % Note: to add an entry to summary you have to define sections with \section{•}
@@ -54,7 +54,7 @@
 % TITLE SLIDE
 
 {
-\usebackgroundtemplate{\frame{\includegraphics[width=\paperwidth]{Background/front.pdf}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Background/front.pdf}}
 
 \begin{frame}[noframenumbering]
 
@@ -83,7 +83,7 @@
 % \end{minipage}
 % \begin{minipage}{0.4\paperwidth}
 % \vspace{-12pt}
-% \centerline{\frame{\includegraphics[height=5.5cm]{Logo/EEEIC_logo.jpg}}
+% \centerline{\includegraphics[height=5.5cm]{Logo/EEEIC_logo.jpg}
 % \end{minipage}
     
 % \end{frame}
@@ -91,7 +91,7 @@
 %inserting logos in every page after SUMMARY
 \addtobeamertemplate{frametitle}{}{%
 \begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north east] at (current page.north east) {\frame{\includegraphics[height=1.5cm]{Logo/unitn.png}}};
+\node[anchor=north east] at (current page.north east) {\includegraphics[height=1.5cm]{Logo/unitn.png}};
 \end{tikzpicture}
 }
 
@@ -330,7 +330,7 @@ $P_{fromBESS,j}(t) = P_{\Delta}(t) \cdot \frac{SOC_j(t-\Delta t)}{\sum_{j=1}^N S
 % CLOSURE SLIDE
 
 { % select a background for the closure slide
-\usebackgroundtemplate{\frame{\includegraphics[width=\paperwidth]{Background/end.pdf}}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Background/end.pdf}}
 
 \begin{frame}[noframenumbering]
 
